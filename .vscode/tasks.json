@@ -1,0 +1,33 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}", 
+                "${workspaceFolder}/epoll.cpp",
+                "${workspaceFolder}/threadpool.cpp",
+                "${workspaceFolder}/util.cpp",
+                "${workspaceFolder}/requestData.cpp",
+                "-l",
+                "pthread",
+                "`pkg-config", "--cflags", "--libs", "opencv`"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
